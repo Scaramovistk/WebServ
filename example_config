@@ -1,0 +1,66 @@
+server {
+	listen 2000;
+	server_name	Wahoo.com;
+	root	rootdir/;
+	host	127.0.0.1;
+	index	index.html;
+	client_max_body_size 1000000000;
+	listing on;
+	error_pages
+	400 /error/400.html
+	403	/error/403.html
+	404	/error/404.html
+	405	/error/405.html
+	500	/error/500.html
+	501	/error/501.html
+	502	/error/502.html;
+	location / {
+		index index.html;
+		methods	GET POST;
+	}
+
+	location /test/ {
+		listing on;
+		index test.html;
+		methods	GET POST;
+	}
+
+
+	location /lmao/ {
+		listing on;
+		index lol.html;
+		proxy /test/lol/;
+		methods GET;
+	}
+
+	location /delete/ {
+		listing on;
+		methods GET POST DELETE;
+	}
+
+	location /cgi-bin/ {
+		root:	rootdir/;
+		index	time.py;
+		methods GET POST;
+		cgi_path	/usr/bin/perl /usr/bin/python3;
+		cgi_extensions	.pl .py;
+	}
+
+	location /tmp/ {
+		root:	rootdir/;
+		listing on;
+		methods GET POST DELETE;
+	}
+}
+server {
+	index	test.html;
+	root	rootdir/;
+	listen	2000;
+	host	127.0.0.1;
+	server_name	theserver.com;
+}
+
+
+
+
+
