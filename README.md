@@ -41,7 +41,6 @@ make fclean
 
 # Well done!
 ```
-![alt text](./images/overview.png)
 
 ---
 
