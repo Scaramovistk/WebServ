@@ -10,7 +10,7 @@ For the [I/O Multiplexing](https://notes.shichao.io/unp/ch6/), ie informing the 
 
 [HTTP requests](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) are read, parsed, processed and sent to a [CGI](https://en.wikipedia.org/wiki/Common_Gateway_Interface) if configured in the [configuration file](https://docs.nginx.com/nginx/admin-guide/basic-functionality/managing-configuration-files/) and finally a [HTTP response](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) is returned to the client with [headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers), [body](https://en.wikipedia.org/wiki/HTTP_message_body) and correct [HTTP status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).
 
-For the bonus we have to support [cookies](https://en.wikipedia.org/wiki/HTTP_cookie), [session](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#HTTP_session) management and handle multiple [CGI](https://en.wikipedia.org/wiki/Common_Gateway_Interface).
+For the bonus we have to support [cookies](https://en.wikipedia.org/wiki/HTTP_cookie) and handle multiple [CGI](https://en.wikipedia.org/wiki/Common_Gateway_Interface).
 
 ### Availability
 ![alt text](./images/preview_siege_1.gif)
@@ -31,10 +31,10 @@ git clone https://github.com/Scaramovistk/WebServ.git && cd WebServ/
 make && make dep
 
 # Run the application with a config file
-./webserv default.conf
+./webserv example_config
 
 # Access the default website using the URL below
-http://localhost:3490
+http://localhost:2000
 
 # Clean output objects with
 make fclean
@@ -47,4 +47,3 @@ make fclean
 Made by:
 Yannick Jorus 👋 <br/>
 Gabriel Scaramal 👋 <br/>
-Krystian Kaczorowski👋 <br/>
